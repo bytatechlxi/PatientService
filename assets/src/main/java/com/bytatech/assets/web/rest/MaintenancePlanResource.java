@@ -4,25 +4,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bytatech.assets.domain.Asset;
-import com.bytatech.assets.service.AssetService;
+import com.bytatech.assets.service.MaintenancePlanService;
 import com.bytatech.assets.service.dto.AssetDTO;
+import com.bytatech.assets.service.dto.MaintenancePlanDTO;
 
 @RestController
-public class AssetResource {
+public class MaintenancePlanResource {
 
 	@Autowired
-	private AssetService service;
+	private MaintenancePlanService service;
 	
 	@RequestMapping("/save")
-	public void save(AssetDTO dto) {
+	public void save(MaintenancePlanDTO dto) {
 		
-		service.save(dto);
+	service.save(dto);
 		
 	}
 	
 	@RequestMapping("/find")
-	public AssetDTO findById(int id) {
+	public MaintenancePlanDTO findById(int id) {
 		
 		return service.findById(id);
 		
@@ -34,5 +34,4 @@ public class AssetResource {
 		service.delete(id);
 		
 	}
-	
 }
